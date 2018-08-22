@@ -34,6 +34,9 @@ class GameofLife {
             while (StdDraw.hasNextKeyTyped() && StdDraw.nextKeyTyped() == ' ') {
                 this.draw();
             }
+            while (StdDraw.hasNextKeyTyped() && StdDraw.nextKeyTyped() == 'r') {
+                this.makeTestMatix();
+            }
         }
     }
 
@@ -150,14 +153,11 @@ class GameofLife {
     }
 
     void makeTestMatix() {
-        // for (int i = 0; i < xDim; i++) {
-        // for (int j = 0; j < yDim; j++) {
-        // cellMatrix[i][j] = Math.random() < 0.5;
-        // }
-        // // }
-        cellMatrix[4][4] = true;
-        cellMatrix[5][4] = true;
-        cellMatrix[6][4] = true;
-        oldCellMatrix = cellMatrix;
+        for (int i = 0; i < xDim; i++) {
+            for (int j = 0; j < yDim; j++) {
+                cellMatrix[i][j] = Math.random() < 0.5;
+            }
+        }
+        this.drawAllCells();
     }
 }
